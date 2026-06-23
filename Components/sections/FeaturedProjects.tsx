@@ -1,22 +1,23 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Card from "@/Components/ui/Card";
 import Button from "@/Components/ui/Button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { RiExternalLinkLine, RiGithubFill } from "react-icons/ri";
+import { RiExternalLinkLine} from "react-icons/ri";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
     id: 1,
-    title: "Restaurant Website",
+    title: "La Cucina Restaurant",
     desc: "Booking & menu-focused site with elegant food photography layout.",
     category: "restaurant",
-    live: "https://example.com/restaurant",
+    live: "https://la-cucina-restaurant.vercel.app/",
     gradient: "from-orange-600/40 via-red-600/20 to-rose-900/30",
+    image: "la cucina.png",
     accent: "text-orange-400",
     tag: "bg-orange-500/15 text-orange-300 border-orange-500/20",
   },
@@ -27,6 +28,7 @@ const projects = [
     category: "local",
     live: "https://example.com/plumbing",
     gradient: "from-blue-600/40 via-blue-700/20 to-indigo-900/30",
+    image: "plumbing.svg",
     accent: "text-blue-400",
     tag: "bg-blue-500/15 text-blue-300 border-blue-500/20",
   },
@@ -37,6 +39,7 @@ const projects = [
     category: "landing",
     live: "https://example.com/travel",
     gradient: "from-cyan-600/40 via-teal-600/20 to-emerald-900/30",
+    image: "travel.svg",
     accent: "text-cyan-400",
     tag: "bg-cyan-500/15 text-cyan-300 border-cyan-500/20",
   },
@@ -47,6 +50,7 @@ const projects = [
     category: "saas",
     live: "https://example.com/saas-dashboard",
     gradient: "from-violet-600/40 via-purple-700/20 to-indigo-900/30",
+    image: "saas.svg",
     accent: "text-violet-400",
     tag: "bg-violet-500/15 text-violet-300 border-violet-500/20",
   },
@@ -57,6 +61,7 @@ const projects = [
     category: "local",
     live: "https://example.com/gym",
     gradient: "from-pink-600/40 via-rose-600/20 to-red-900/30",
+    image: "gym.svg",
     accent: "text-pink-400",
     tag: "bg-pink-500/15 text-pink-300 border-pink-500/20",
   },
@@ -67,6 +72,7 @@ const projects = [
     category: "real-estate",
     live: "https://example.com/real-estate",
     gradient: "from-emerald-600/40 via-green-700/20 to-teal-900/30",
+    image: "real-estate.svg",
     accent: "text-emerald-400",
     tag: "bg-emerald-500/15 text-emerald-300 border-emerald-500/20",
   },
@@ -162,23 +168,18 @@ export default function FeaturedProjects() {
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filtered.map((p) => (
             <Card key={p.id} glow hover className="overflow-hidden p-0!">
-              {/* Gradient preview */}
-              <div
-                className={`h-44 bg-linear-to-br ${p.gradient} relative flex items-end p-4`}
-              >
+              {/* Image preview with dynamic color overlay */}
+              <div className="h-44 relative">
+                <img
+                  src={`/assets/${p.image}`}
+                  alt={p.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient} mix-blend-overlay`} />
                 {/* Grid lines */}
                 <div className="absolute inset-0 grid-bg opacity-30" />
-                {/* Stack pills */}
-                {/* <div className="relative flex gap-1.5 flex-wrap">
-                  {p.stack.map((s) => (
-                    <span
-                      key={s}
-                      className="px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/40 backdrop-blur text-white/80 border border-white/10"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div> */}
+                {/* content slot (if needed) */}
+                <div className="absolute inset-0 flex items-end p-4" />
               </div>
               <div className="p-5">
                 <span
