@@ -14,7 +14,6 @@ const projects = [
     id: 1,
     title: "Restaurant Website",
     desc: "Booking & menu-focused site with elegant food photography layout.",
-    stack: ["React", "Next.js"],
     category: "restaurant",
     live: "https://example.com/restaurant",
     gradient: "from-orange-600/40 via-red-600/20 to-rose-900/30",
@@ -25,7 +24,6 @@ const projects = [
     id: 2,
     title: "Plumbing Business Site",
     desc: "Service booking and lead-gen with trust signals & CTAs.",
-    stack: ["Next.js"],
     category: "local",
     live: "https://example.com/plumbing",
     gradient: "from-blue-600/40 via-blue-700/20 to-indigo-900/30",
@@ -36,7 +34,6 @@ const projects = [
     id: 3,
     title: "Travel Landing Page",
     desc: "Conversion-focused landing page with stunning visuals.",
-    stack: ["Next.js", "Tailwind"],
     category: "landing",
     live: "https://example.com/travel",
     gradient: "from-cyan-600/40 via-teal-600/20 to-emerald-900/30",
@@ -47,7 +44,6 @@ const projects = [
     id: 4,
     title: "SaaS Dashboard",
     desc: "Admin & analytics dashboards with real-time data visualization.",
-    stack: ["React", "TypeScript"],
     category: "saas",
     live: "https://example.com/saas-dashboard",
     gradient: "from-violet-600/40 via-purple-700/20 to-indigo-900/30",
@@ -58,7 +54,6 @@ const projects = [
     id: 5,
     title: "Gym & Fitness Website",
     desc: "Classes, membership pages and personal trainer showcase.",
-    stack: ["Next.js"],
     category: "local",
     live: "https://example.com/gym",
     gradient: "from-pink-600/40 via-rose-600/20 to-red-900/30",
@@ -69,7 +64,6 @@ const projects = [
     id: 6,
     title: "Real Estate Platform",
     desc: "Property listings, search filters and agent contact system.",
-    stack: ["React", "Next.js"],
     category: "real-estate",
     live: "https://example.com/real-estate",
     gradient: "from-emerald-600/40 via-green-700/20 to-teal-900/30",
@@ -175,7 +169,7 @@ export default function FeaturedProjects() {
                 {/* Grid lines */}
                 <div className="absolute inset-0 grid-bg opacity-30" />
                 {/* Stack pills */}
-                <div className="relative flex gap-1.5 flex-wrap">
+                {/* <div className="relative flex gap-1.5 flex-wrap">
                   {p.stack.map((s) => (
                     <span
                       key={s}
@@ -184,7 +178,7 @@ export default function FeaturedProjects() {
                       {s}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
               <div className="p-5">
                 <span
