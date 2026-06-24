@@ -5,7 +5,7 @@ import Card from "@/Components/ui/Card";
 import Button from "@/Components/ui/Button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { RiExternalLinkLine} from "react-icons/ri";
+import { RiExternalLinkLine } from "react-icons/ri";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Plumbing Business Website",
+    title: "Aqua Fix Plumbing",
     desc: "Service booking and lead-gen with trust signals & CTAs.",
     category: "local",
     live: "https://aqua-fix-plumbing.vercel.app/",
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Iron Forge Gym Website",
+    title: "Iron Forge Gym",
     desc: "Responsive site for a local gym showcasing trainer bios and membership plans",
     category: "local",
     live: "https://iron-forge-gym-mu.vercel.app/",
@@ -41,22 +41,22 @@ const projects = [
     image: "iron forge.png",
     accent: "text-[#E63946]",
     tag: "bg-[#E6394630] text-[#E63946] border-[#E63946]",
-   
+
   },
   {
     id: 4,
-    title: "SaaS Dashboard",
-    desc: "Admin & analytics dashboards with real-time data visualization.",
-    category: "saas",
-    live: "https://example.com/saas-dashboard",
-    gradient: "from-violet-600/40 via-purple-700/20 to-indigo-900/30",
-    image: "saas.svg",
-    accent: "text-violet-400",
-    tag: "bg-violet-500/15 text-violet-300 border-violet-500/20",
+    title: "Havenly Real Estate",
+    desc: "Property listings, search filters and agent contact system.",
+    category: "real-estate",
+    live: "https://havenly-estates.vercel.app/",
+    // gradient: "from-emerald-600/40 via-green-700/20 to-teal-900/30",
+    image: "havenly.png",
+    accent: "text-[#c9a96a]",
+    tag: "bg-[#c9a96a30] text-[#c9a96a] border-[#c9a96a]",
   },
   {
     id: 5,
-     title: "Travel Landing Page",
+    title: "Travel Landing Page",
     desc: "Conversion-focused landing page with stunning visuals.",
     category: "landing",
     live: "https://example.com/travel",
@@ -67,14 +67,14 @@ const projects = [
   },
   {
     id: 6,
-    title: "Real Estate Platform",
-    desc: "Property listings, search filters and agent contact system.",
-    category: "real-estate",
-    live: "https://example.com/real-estate",
-    gradient: "from-emerald-600/40 via-green-700/20 to-teal-900/30",
-    image: "real-estate.svg",
-    accent: "text-emerald-400",
-    tag: "bg-emerald-500/15 text-emerald-300 border-emerald-500/20",
+    title: "SaaS Dashboard",
+    desc: "Admin & analytics dashboards with real-time data visualization.",
+    category: "saas",
+    live: "https://example.com/saas-dashboard",
+    gradient: "from-violet-600/40 via-purple-700/20 to-indigo-900/30",
+    image: "saas.svg",
+    accent: "text-violet-400",
+    tag: "bg-violet-500/15 text-violet-300 border-violet-500/20",
   },
 ];
 
