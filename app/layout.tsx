@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Chatbot from "../Components/ui/ChatBot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,7 +43,9 @@ export default function RootLayout({
         outfit.variable,
       )}
     >
-      <body className="min-h-full flex flex-col bg-[#04070f]">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#04070f]">{children}
+        <Chatbot/>
+      </body>
     </html>
   );
 }

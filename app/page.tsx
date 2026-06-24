@@ -12,7 +12,7 @@ import FAQ from "@/Components/sections/FAQ";
 import Contact from "@/Components/sections/Contact";
 import CustomCursor from "@/Components/ui/CustomCursor";
 import CurvedLoop from "@/Components/ui/CurvedLoop";
-import CircularText from "@/Components/ui/CircularText";
+// import CircularText from "@/Components/ui/CircularText";
 
 export default function Home() {
   return (
@@ -21,18 +21,18 @@ export default function Home() {
       style={{ background: "linear-gradient(to bottom, #04070f 0%, #060b18 40%, #04070f 100%)" }}
     >
       <CustomCursor />
-      <CircularText
+      {/* <CircularText
         text="Contact-Now*Contact-Now*"
         onHover="speedUp"
         spinDuration={20}
       >
-      </CircularText>
+      </CircularText> */}
       <Navbar />
       <main>
         <Hero />
         {/* Curved marquee */}
         <div className="bg-[#010205]">
-          <div className="divider-gradient mb-0" />
+          {/* <div className="divider-gradient mb-0" /> */}
           <CurvedLoop
             marqueeText="Helping Businesses Grow Online ● Modern Websites That Convert ● Pixel-Perfect Design ● Fast & Responsive Experiences ● Custom Solutions for Brands ● SEO-Optimized Websites ● Seamless User Experiences"
             speed={1}
