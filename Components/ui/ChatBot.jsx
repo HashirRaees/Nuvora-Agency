@@ -2,14 +2,6 @@
 
 import Script from "next/script";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "zapier-interfaces-chatbot-embed": any;
-    }
-  }
-}
-
 export default function ZapierChatbot() {
   return (
     <>
