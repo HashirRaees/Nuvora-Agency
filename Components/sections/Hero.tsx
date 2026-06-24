@@ -22,12 +22,12 @@ export default function Hero() {
             <motion.h1
               initial={{ y: 24, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.1, duration: 0.5}}
               className="text-2xl md:text-6xl font-extrabold text-white leading-tight"
             >
               Modern Websites That Help <br /> <span className="gradient-text">Businesses Grow</span>
             </motion.h1>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }} className="mt-6 text-sm md:text-lg text-white/80 text-center">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25, duration: 0.5 }} className="mt-6 text-sm md:text-lg text-white/80 text-center">
               We design and develop fast, responsive, and conversion-focused websites for businesses, startups, and brands.
             </motion.p>
 
