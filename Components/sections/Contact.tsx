@@ -31,6 +31,14 @@ const socials = [
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
@@ -76,15 +84,46 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    if (successRef.current) {
-      gsap.fromTo(
-        successRef.current,
-        { opacity: 0, scale: 0.9, y: 16 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }
-      );
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send");
+      }
+
+      setSent(true);
+
+      if (successRef.current) {
+        gsap.fromTo(
+          successRef.current,
+          { opacity: 0, scale: 0.9, y: 16 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.45,
+            ease: "back.out(1.6)",
+          }
+        );
+      }
+    } catch (error) {
+      alert("Failed to send message. Please try again.");
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -97,7 +136,7 @@ export default function Contact() {
         <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
           <p className="section-label mb-3 text-xs">Get In Touch</p>
           <h2 className="section-heading text-2xl md:text-5xl">
-            Let's Build Something{" "} <br/>
+            Let's Build Something{" "} <br />
             <span className="gradient-text">Great Together</span>
           </h2>
           <p className="mt-4 text-white/55 text-sm md:text-lg leading-relaxed">
@@ -171,7 +210,7 @@ export default function Contact() {
                   Message Sent!
                 </h3>
                 <p className="text-white/55 max-w-xs">
-                  Thanks for reaching out. We'll get back to you within one business day.
+                  Thanks for reaching out. We'll get back to you as soon as we can.
                 </p>
               </div>
             ) : (
@@ -189,6 +228,10 @@ export default function Contact() {
                       name="name"
                       placeholder="John Smith"
                       className="form-input"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                     />
                   </div>
                   <div>
@@ -201,6 +244,10 @@ export default function Contact() {
                       type="email"
                       placeholder="john@company.com"
                       className="form-input"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                     />
                   </div>
                 </div>
@@ -213,6 +260,10 @@ export default function Contact() {
                     name="subject"
                     placeholder="New website project"
                     className="form-input"
+                    value={formData.subject}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
                   />
                 </div>
 
@@ -226,6 +277,10 @@ export default function Contact() {
                     rows={5}
                     placeholder="Tell us about your project, goals, and timeline..."
                     className="form-input resize-none"
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                   />
                 </div>
 
@@ -234,10 +289,11 @@ export default function Contact() {
                   variant="primary"
                   size="lg"
                   fullWidth
+                  disabled={loading}
                   icon={RiSendPlaneFill}
                   iconPosition="right"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             )}
