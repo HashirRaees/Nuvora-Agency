@@ -56,14 +56,14 @@ const projects = [
   },
   {
     id: 5,
-    title: "Travel Landing Page",
+    title: "Wanderlux travels",
     desc: "Conversion-focused landing page with stunning visuals.",
-    category: "landing",
-    live: "https://example.com/travel",
+    category: "local",
+    live: "https://wanderlux-travel-ten.vercel.app/",
     gradient: "from-cyan-600/40 via-teal-600/20 to-emerald-900/30",
-    image: "travel.svg",
-    accent: "text-cyan-400",
-    tag: "bg-cyan-500/15 text-cyan-300 border-cyan-500/20",
+    image: "wanderlux.png",
+    accent: "text-[#0F241F]",
+    tag: "bg-[#0F241F30] text-green-500 border-[#0F241F]",
   },
   {
     id: 6,
@@ -78,12 +78,11 @@ const projects = [
   },
 ];
 
-const categories = ["all", "restaurant", "local", "landing", "saas", "real-estate"];
+const categories = ["all", "restaurant", "local", "saas", "real-estate"];
 const catLabels: Record<string, string> = {
   all: "All",
   restaurant: "Restaurant",
   local: "Local Biz",
-  landing: "Landing",
   saas: "SaaS",
   "real-estate": "Real Estate",
 };
