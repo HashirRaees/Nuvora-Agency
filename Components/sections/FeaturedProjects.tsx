@@ -65,25 +65,24 @@ const projects = [
     accent: "text-[#0F241F]",
     tag: "bg-[#0F241F30] text-green-500 border-[#0F241F]",
   },
-  {
-    id: 6,
-    title: "SaaS Dashboard",
-    desc: "Admin & analytics dashboards with real-time data visualization.",
-    category: "saas",
-    live: "https://example.com/saas-dashboard",
-    gradient: "from-violet-600/40 via-purple-700/20 to-indigo-900/30",
-    image: "saas.svg",
-    accent: "text-violet-400",
-    tag: "bg-violet-500/15 text-violet-300 border-violet-500/20",
-  },
+  // {
+  //   id: 6,
+  //   title: "SaaS Dashboard",
+  //   desc: "Admin & analytics dashboards with real-time data visualization.",
+  //   category: "saas",
+  //   live: "https://example.com/saas-dashboard",
+  //   gradient: "from-violet-600/40 via-purple-700/20 to-indigo-900/30",
+  //   image: "saas.svg",
+  //   accent: "text-violet-400",
+  //   tag: "bg-violet-500/15 text-violet-300 border-violet-500/20",
+  // },
 ];
 
-const categories = ["all", "restaurant", "local", "saas", "real-estate"];
+const categories = ["all", "restaurant", "local", "real-estate"];
 const catLabels: Record<string, string> = {
   all: "All",
   restaurant: "Restaurant",
   local: "Local Biz",
-  saas: "SaaS",
   "real-estate": "Real Estate",
 };
 
