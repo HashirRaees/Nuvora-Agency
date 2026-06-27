@@ -14,7 +14,7 @@ const data = [
     name: "Sarah Mitchell",
     role: "CEO, Bloom Bakery",
     avatar: "SM",
-    text: "Studio delivered an absolutely stunning website that increased our online orders by 40% in the first month. The design exceeded every expectation.",
+    text: "Nuvora delivered an absolutely stunning website that increased our online orders by 40% in the first month. The design exceeded every expectation.",
     stars: 5,
     color: "from-violet-600 to-purple-700",
   },
