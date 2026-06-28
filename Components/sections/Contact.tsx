@@ -7,7 +7,7 @@ import Button from "@/Components/ui/Button";
 import {
   RiSendPlaneFill,
   RiMailLine,
-  RiPhoneLine,
+  RiWhatsappLine,
   RiMapPinLine,
   RiGithubFill,
   RiTwitterXFill,
@@ -18,9 +18,9 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const contactInfo = [
-  { icon: RiMailLine, label: "Email", value: "hello@studio.dev", href: "mailto:hello@studio.dev" },
-  { icon: RiPhoneLine, label: "Phone", value: "+1 (555) 000-0000", href: "tel:+15550000000" },
-  { icon: RiMapPinLine, label: "Location", value: "New York, NY", href: "#" },
+  { icon: RiMailLine, label: "Email", value: "nvoraagency@gmail.com", href: "https://mail.google.com/mail/?view=cm&fs=1&to=nvoraagency@gmail.com" },
+  { icon: RiWhatsappLine, label: "Whatsapp", value: "+92 314-7125890", href: "https://wa.me/923147125890" },
+  { icon: RiMapPinLine, label: "Location", value: "Karachi, Pakistan", href: "#" },
 ];
 
 const socials = [
@@ -153,6 +153,7 @@ export default function Contact() {
                 <a
                   key={c.label}
                   href={c.href}
+                  target="_blank"
                   className="flex items-center gap-4 p-4 rounded-md bg-white/3 border border-white/7 hover:border-violet-500/30 hover:bg-violet-500/4 transition-all duration-200 group"
                 >
                   <div className="w-10 h-10 rounded-sm bg-violet-500/15 border border-violet-500/20 flex items-center justify-center">
