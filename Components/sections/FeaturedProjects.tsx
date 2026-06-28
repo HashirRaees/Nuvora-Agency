@@ -65,6 +65,17 @@ const projects = [
     accent: "text-[#0F241F]",
     tag: "bg-[#0F241F30] text-green-500 border-[#0F241F]",
   },
+  {
+    id: 6,
+    title: "Build Core Constructions",
+    desc: "A full fledged construction webiste for residential & commercial projects.",
+    category: "local",
+    live: "https://build-core-constructions-nu.vercel.app/",
+    gradient: "from-cyan-600/40 via-teal-600/20 to-emerald-900/30",
+    image: "buildcore.png",
+    accent: "text-[#FF6A00]",
+    tag: "bg-[#FF6A0030] text-[#FF6A00] border-[#FF6A00]",
+  },
   // {
   //   id: 6,
   //   title: "SaaS Dashboard",
