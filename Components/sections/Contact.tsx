@@ -9,8 +9,8 @@ import {
   RiMailLine,
   RiWhatsappLine,
   RiMapPinLine,
-  RiGithubFill,
-  RiTwitterXFill,
+  RiFacebookFill,
+  RiInstagramLine,
   RiLinkedinFill,
   RiCheckboxCircleFill,
 } from "react-icons/ri";
@@ -24,9 +24,9 @@ const contactInfo = [
 ];
 
 const socials = [
-  { icon: RiGithubFill, href: "#", label: "GitHub" },
-  { icon: RiTwitterXFill, href: "#", label: "Twitter" },
-  { icon: RiLinkedinFill, href: "#", label: "LinkedIn" },
+  { icon: RiFacebookFill, href: "https://www.facebook.com/profile.php?id=61591203403007", label: "Facebook" },
+  { icon: RiInstagramLine, href: "https://www.instagram.com/nuvora__agency/", label: "Instagram" },
+  // { icon: RiLinkedinFill, href: "#", label: "LinkedIn" },
 ];
 
 export default function Contact() {
@@ -175,6 +175,7 @@ export default function Contact() {
                   <a
                     key={label}
                     href={href}
+                    target="_blank"
                     aria-label={label}
                     className="w-12 h-12 flex items-center justify-center rounded-3xl bg-white/5 border border-white/8 text-white/50 hover:text-white hover:bg-white/10 hover:border-violet-500/30 transition-all duration-200"
                   >
