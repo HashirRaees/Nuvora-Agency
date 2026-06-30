@@ -1,6 +1,5 @@
 import Link from "next/link";
-import React from "react";
-import { RiGithubFill, RiTwitterXFill, RiLinkedinFill, RiDribbbleFill } from "react-icons/ri";
+import { RiFacebookFill, RiInstagramLine, RiLinkedinFill, RiDribbbleFill } from "react-icons/ri";
 
 const footerLinks = [
   {
@@ -25,16 +24,16 @@ const footerLinks = [
     label: "Contact",
     links: [
       { label: "Get In Touch", href: "#contact" },
-      { label: "hello@studio.dev", href: "mailto:hello@studio.dev" },
+      { label: "nvoraagency@gmail.com", href: "mailto:nvoraagency@gmail.com" },
     ],
   },
 ];
 
 const socials = [
-  { icon: RiGithubFill, href: "#", label: "GitHub" },
-  { icon: RiTwitterXFill, href: "#", label: "Twitter" },
-  { icon: RiLinkedinFill, href: "#", label: "LinkedIn" },
-  { icon: RiDribbbleFill, href: "#", label: "Dribbble" },
+  { icon: RiFacebookFill, href: "https://www.facebook.com/profile.php?id=61591203403007", label: "Facebook" },
+  { icon: RiInstagramLine, href: "https://www.instagram.com/nuvora__agency/", label: "Instagram" },
+  // { icon: RiLinkedinFill, href: "#", label: "LinkedIn" },
+  // { icon: RiDribbbleFill, href: "#", label: "Dribbble" },
 ];
 
 export default function Footer() {
@@ -66,6 +65,7 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
                   aria-label={label}
                   className="w-10 h-10 flex items-center justify-center rounded-3xl bg-white/5 border border-white/7 text-white/50 hover:text-white hover:bg-white/10 hover:border-violet-500/30 transition-all duration-200"
                 >
@@ -89,6 +89,7 @@ export default function Footer() {
                   <li key={l.label}>
                     <Link
                       href={l.href}
+                      target="_blank"
                       className="text-sm text-white/55 hover:text-white transition-colors duration-200"
                     >
                       {l.label}
