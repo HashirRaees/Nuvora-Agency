@@ -1,50 +1,48 @@
 import Link from "next/link";
-import { RiFacebookFill, RiInstagramLine, RiLinkedinFill, RiDribbbleFill } from "react-icons/ri";
+import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 
 const footerLinks = [
   {
     label: "Services",
     links: [
-      { label: "Web Design", href: "#services" },
-      { label: "Development", href: "#services" },
-      { label: "WordPress", href: "#services" },
-      { label: "Redesign", href: "#services" },
+      { label: "Web Design", href: "/services" },
+      { label: "Development", href: "/services" },
+      { label: "WordPress", href: "/services" },
+      { label: "Redesign", href: "/services" },
     ],
   },
   {
     label: "Company",
     links: [
-      { label: "About Us", href: "#about" },
-      { label: "Portfolio", href: "#portfolio" },
-      { label: "Process", href: "#process" },
-      { label: "FAQ", href: "#faq" },
+      { label: "About Us", href: "/about" },
+      { label: "Portfolio", href: "/portfolio" },
+      { label: "Process", href: "/" },
+      { label: "FAQ", href: "/contact" },
     ],
   },
   {
     label: "Contact",
     links: [
-      { label: "Get In Touch", href: "#contact" },
+      { label: "Get In Touch", href: "/contact" },
       { label: "nvoraagency@gmail.com", href: "mailto:nvoraagency@gmail.com" },
     ],
   },
 ];
 
 const socials = [
-  { icon: RiFacebookFill, href: "https://www.facebook.com/profile.php?id=61591203403007", label: "Facebook" },
-  { icon: RiInstagramLine, href: "https://www.instagram.com/nuvora__agency/", label: "Instagram" },
-  // { icon: RiLinkedinFill, href: "#", label: "LinkedIn" },
-  // { icon: RiDribbbleFill, href: "#", label: "Dribbble" },
+  { icon: FaFacebookF, href: "https://www.facebook.com/profile.php?id=61591203403007", label: "Facebook" },
+  { icon: FaInstagram, href: "https://www.instagram.com/nuvora__agency/", label: "Instagram" },
 ];
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/6 overflow-hidden">
       {/* Gradient glow top */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-px bg-linear-to-r from-transparent via-violet-500/50 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-px bg-linear-to-r from-transparent via-[#3D0C99]/50 to-transparent" />
 
       {/* Orbs */}
-      <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-cyan-500/8 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-[#3D0C99]/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#00ADE0]/8 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-10">
         {/* Top row */}
@@ -57,7 +55,7 @@ export default function Footer() {
             >
               Nuvora<span className="gradient-text">.</span>
             </div>
-            <p className="text-sm text-white/50 leading-relaxed mb-5">
+            <p className="text-sm text-white/55 leading-relaxed mb-5">
               Building modern, high-performing websites that help businesses grow online.
             </p>
             <div className="flex items-center gap-2">
@@ -67,9 +65,9 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   aria-label={label}
-                  className="w-10 h-10 flex items-center justify-center rounded-3xl bg-white/5 border border-white/7 text-white/50 hover:text-white hover:bg-white/10 hover:border-violet-500/30 transition-all duration-200"
+                  className="w-10 h-10 flex items-center justify-center rounded-3xl bg-white/5 border border-white/7 text-white/50 hover:text-white hover:bg-white/10 hover:border-[#3D0C99]/30 transition-all duration-200"
                 >
-                  <Icon size={20} />
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
@@ -89,7 +87,6 @@ export default function Footer() {
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      target="_blank"
                       className="text-sm text-white/55 hover:text-white transition-colors duration-200"
                     >
                       {l.label}

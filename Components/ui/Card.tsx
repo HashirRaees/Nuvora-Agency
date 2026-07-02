@@ -17,7 +17,7 @@ const variantBase: Record<CardVariant, string> = {
   glass:
     "bg-white/[0.04] backdrop-blur-xl border border-white/[0.07]",
   bordered:
-    "bg-white/[0.03] border border-violet-500/20",
+    "bg-white/[0.03] border border-[#3D0C99]/20",
   elevated:
     "bg-[#0c0f1e] border border-white/[0.06] shadow-xl shadow-black/40",
 };
@@ -37,9 +37,9 @@ export default function Card({
     if (!hover) return;
     gsap.to(cardRef.current, {
       y: -6,
-      borderColor: glow ? "rgba(124, 58, 237, 0.4)" : "rgba(255,255,255,0.14)",
+      borderColor: glow ? "rgba(61, 12, 153, 0.4)" : "rgba(255,255,255,0.14)",
       boxShadow: glow
-        ? "0 16px 48px rgba(124, 58, 237, 0.2), 0 0 0 1px rgba(124, 58, 237, 0.1)"
+        ? "0 16px 48px rgba(0, 173, 224, 0.16), 0 0 0 1px rgba(61, 12, 153, 0.12)"
         : "0 16px 48px rgba(0,0,0,0.35)",
       duration: 0.3,
       ease: "power2.out",

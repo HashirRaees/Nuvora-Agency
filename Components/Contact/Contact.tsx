@@ -11,7 +11,7 @@ import {
   RiMapPinLine,
   RiFacebookFill,
   RiInstagramLine,
-  RiLinkedinFill,
+  // RiLinkedinFill,
   RiCheckboxCircleFill,
 } from "react-icons/ri";
 
@@ -154,10 +154,10 @@ export default function Contact() {
                   key={c.label}
                   href={c.href}
                   target="_blank"
-                  className="flex items-center gap-4 p-4 rounded-md bg-white/3 border border-white/7 hover:border-violet-500/30 hover:bg-violet-500/4 transition-all duration-200 group"
+                  className="flex items-center gap-4 p-4 rounded-md bg-white/3 border border-white/7 hover:border-[#3D0C99]/30 hover:bg-[#3D0C99]/4 transition-all duration-200 group"
                 >
-                  <div className="w-10 h-10 rounded-sm bg-violet-500/15 border border-violet-500/20 flex items-center justify-center">
-                    <c.icon className="text-lg text-violet-400" />
+                  <div className="w-10 h-10 rounded-sm bg-[#3D0C99]/15 border border-[#3D0C99]/20 flex items-center justify-center">
+                    <c.icon className="text-lg text-[#00ADE0]" />
                   </div>
                   <div>
                     <div className="text-xs text-white/35 mb-0.5">{c.label}</div>
@@ -177,7 +177,7 @@ export default function Contact() {
                     href={href}
                     target="_blank"
                     aria-label={label}
-                    className="w-12 h-12 flex items-center justify-center rounded-3xl bg-white/5 border border-white/8 text-white/50 hover:text-white hover:bg-white/10 hover:border-violet-500/30 transition-all duration-200"
+                    className="w-12 h-12 flex items-center justify-center rounded-3xl bg-white/5 border border-white/8 text-white/50 hover:text-white hover:bg-white/10 hover:border-[#3D0C99]/30 transition-all duration-200"
                   >
                     <Icon size={25} />
                   </a>
@@ -186,10 +186,10 @@ export default function Contact() {
             </div>
 
             {/* Response time */}
-            <div className="rounded-md bg-gradient-to-br from-violet-600/15 to-cyan-600/10 border border-violet-500/20 p-5">
+            <div className="rounded-md bg-gradient-to-br from-[#3D0C99]/15 to-[#00ADE0]/10 border border-[#3D0C99]/20 p-5">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Available Now</span>
+                <div className="w-2 h-2 rounded-full bg-[#00ADE0] animate-pulse" />
+                <span className="text-xs font-semibold text-[#00ADE0] uppercase tracking-wider">Available Now</span>
               </div>
               <p className="text-sm text-white/60 leading-relaxed">
                 We typically respond within a few hours during business days.
@@ -202,9 +202,9 @@ export default function Contact() {
             {sent ? (
               <div
                 ref={successRef}
-                className="flex flex-col items-center justify-center text-center py-20 rounded-md bg-white/[0.03] border border-emerald-500/25"
+                className="flex flex-col items-center justify-center text-center py-20 rounded-md bg-white/[0.03] border border-[#00ADE0]/25"
               >
-                <RiCheckboxCircleFill className="text-6xl text-emerald-400 mb-4" />
+                <RiCheckboxCircleFill className="text-6xl text-[#00ADE0] mb-4" />
                 <h3
                   className="text-2xl font-bold text-white mb-2"
                   style={{ fontFamily: "var(--font-outfit)" }}

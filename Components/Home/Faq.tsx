@@ -131,7 +131,7 @@ export default function FAQ() {
               className={[
                 "rounded-md border transition-all duration-300 overflow-hidden",
                 open === idx
-                  ? "border-violet-500/30 bg-violet-500/6"
+                  ? "border-[#3D0C99]/30 bg-[#3D0C99]/6"
                   : "border-white/7 bg-white/3 hover:border-white/12",
               ].join(" ")}
             >
@@ -152,7 +152,7 @@ export default function FAQ() {
                   className={[
                     "shrink-0 w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-200",
                     open === idx
-                      ? "bg-violet-600 border-violet-500 text-white"
+                      ? "bg-[#3D0C99] border-[#00ADE0] text-white"
                       : "bg-white/5 border-white/10 text-white/50",
                   ].join(" ")}
                 >

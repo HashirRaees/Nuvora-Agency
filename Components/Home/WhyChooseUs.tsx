@@ -4,67 +4,65 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  BsCheckCircleFill,
-} from "react-icons/bs";
-import {
-  RiSmartphoneLine,
-  RiSpeedLine,
-  RiSearchLine,
-  RiPaletteLine,
-  RiMoneyDollarCircleLine,
-  RiCustomerService2Line,
-} from "react-icons/ri";
+  FaMobileScreenButton,
+  FaGaugeHigh,
+  FaMagnifyingGlass,
+  FaPalette,
+  FaCircleDollarToSlot,
+  FaHeadset,
+  FaCircleCheck,
+} from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const items = [
   {
-    icon: RiSmartphoneLine,
+    icon: FaMobileScreenButton,
     title: "Mobile Responsive",
     desc: "Every site looks and works flawlessly on all screen sizes.",
-    color: "text-violet-400",
-    bg: "from-violet-500/15 to-violet-700/5",
-    border: "border-violet-500/20",
+    color: "text-[#3D0C99]",
+    bg: "from-[#3D0C99]/15 to-[#00ADE0]/5",
+    border: "border-[#3D0C99]/20",
   },
   {
-    icon: RiSpeedLine,
+    icon: FaGaugeHigh,
     title: "Fast Performance",
     desc: "Optimized for speed — sub-second load times and perfect Core Web Vitals.",
-    color: "text-cyan-400",
-    bg: "from-cyan-500/15 to-cyan-700/5",
-    border: "border-cyan-500/20",
+    color: "text-[#00ADE0]",
+    bg: "from-[#00ADE0]/15 to-[#3D0C99]/5",
+    border: "border-[#00ADE0]/20",
   },
   {
-    icon: RiSearchLine,
+    icon: FaMagnifyingGlass,
     title: "SEO Friendly",
     desc: "Built with search engines in mind from the ground up.",
-    color: "text-emerald-400",
-    bg: "from-emerald-500/15 to-emerald-700/5",
-    border: "border-emerald-500/20",
+    color: "text-[#3D0C99]",
+    bg: "from-[#3D0C99]/15 to-[#00ADE0]/5",
+    border: "border-[#3D0C99]/20",
   },
   {
-    icon: RiPaletteLine,
+    icon: FaPalette,
     title: "Modern Design",
     desc: "Cutting-edge aesthetics that wow visitors and build trust instantly.",
-    color: "text-pink-400",
-    bg: "from-pink-500/15 to-pink-700/5",
-    border: "border-pink-500/20",
+    color: "text-[#00ADE0]",
+    bg: "from-[#00ADE0]/15 to-[#3D0C99]/5",
+    border: "border-[#00ADE0]/20",
   },
   {
-    icon: RiMoneyDollarCircleLine,
+    icon: FaCircleDollarToSlot,
     title: "Affordable Pricing",
     desc: "Agency-quality results at prices that make sense for your business.",
-    color: "text-amber-400",
-    bg: "from-amber-500/15 to-amber-700/5",
-    border: "border-amber-500/20",
+    color: "text-[#3D0C99]",
+    bg: "from-[#3D0C99]/15 to-[#00ADE0]/5",
+    border: "border-[#3D0C99]/20",
   },
   {
-    icon: RiCustomerService2Line,
+    icon: FaHeadset,
     title: "Ongoing Support",
     desc: "We don't disappear after launch — we're here whenever you need us.",
-    color: "text-blue-400",
-    bg: "from-blue-500/15 to-blue-700/5",
-    border: "border-blue-500/20",
+    color: "text-[#00ADE0]",
+    bg: "from-[#00ADE0]/15 to-[#3D0C99]/5",
+    border: "border-[#00ADE0]/20",
   },
 ];
 
@@ -113,7 +111,7 @@ export default function WhyChooseUs() {
 
       <div className="max-w-7xl mx-auto px-6">
         <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
-          <p className="section-label mb-3 text-xs">Why Studio.</p>
+          <p className="section-label mb-3 text-xs">Why Nuvora.</p>
           <h2 className="section-heading text-2xl md:text-5xl">
             Built Different,{" "}
             <span className="gradient-text">Built Better</span>
@@ -137,7 +135,7 @@ export default function WhyChooseUs() {
                 <div className="flex-shrink-0">
                   <item.icon className={`text-3xl ${item.color}`} />
                 </div>
-                <BsCheckCircleFill className="text-sm text-white/20 group-hover:text-white/40 transition-colors mt-1 ml-auto" />
+                <FaCircleCheck className="text-sm text-white/20 group-hover:text-white/40 transition-colors mt-1 ml-auto" />
               </div>
               <h3
                 className="font-semibold text-white text-base mb-2"

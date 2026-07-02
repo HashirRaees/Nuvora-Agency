@@ -44,8 +44,8 @@ const CustomCursor = () => {
       gsap.to(dot, {
         scale: pointer ? 1.6 : 1,
         background: pointer
-          ? "linear-gradient(135deg, #a78bfa, #06b6d4)"
-          : "#a78bfa",
+          ? "linear-gradient(135deg, #3D0C99, #00ADE0)"
+          : "#3D0C99",
         duration: 0.2,
         ease: "power2.out",
       });
@@ -53,8 +53,8 @@ const CustomCursor = () => {
       gsap.to(ring, {
         scale: pointer ? 1.5 : 1,
         borderColor: pointer
-          ? "rgba(6, 182, 212, 0.7)"
-          : "rgba(167, 139, 250, 0.45)",
+          ? "rgba(0, 173, 224, 0.7)"
+          : "rgba(61, 12, 153, 0.45)",
         duration: 0.25,
         ease: "power2.out",
       });
@@ -90,7 +90,7 @@ const CustomCursor = () => {
           width: 10,
           height: 10,
           borderRadius: "50%",
-          background: "#a78bfa",
+          background: "#3D0C99",
           pointerEvents: "none",
           zIndex: 9999,
           mixBlendMode: "screen",
@@ -106,7 +106,7 @@ const CustomCursor = () => {
           width: 36,
           height: 36,
           borderRadius: "50%",
-          border: "1.5px solid rgba(167, 139, 250, 0.45)",
+          border: "1.5px solid rgba(61, 12, 153, 0.45)",
           pointerEvents: "none",
           zIndex: 9998,
         }}

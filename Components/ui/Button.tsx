@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, ElementType, ReactNode, MouseEventHandler } from "react";
+import { useRef, ElementType, ReactNode, MouseEventHandler, Ref } from "react";
 import gsap from "gsap";
 
 type ButtonVariant = "primary" | "ghost" | "outline" | "danger" | "secondary";
@@ -13,24 +13,27 @@ interface ButtonProps {
   size?: ButtonSize;
   icon?: ElementType;
   iconPosition?: IconPosition;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLElement>;
   type?: "button" | "submit" | "reset";
   className?: string;
   disabled?: boolean;
   fullWidth?: boolean;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-to-r from-violet-600 to-cyan-500 text-white border-transparent shadow-lg shadow-violet-900/30",
+    "bg-gradient-to-r from-[#3D0C99] to-[#00ADE0] text-white border-transparent shadow-lg shadow-[#3D0C99]/30",
   ghost:
-    "bg-white/5 text-white/90 border-white/10 hover:bg-white/10 hover:border-white/20 hover:text-white",
+    "bg-white/5 text-white/90 border-white/10 hover:bg-white/10 hover:border-[#00ADE0]/40 hover:text-white",
   outline:
-    "bg-transparent text-violet-400 border-violet-500/50 hover:bg-violet-500/10 hover:border-violet-400 hover:text-violet-300",
+    "bg-transparent text-[#00ADE0] border-[#3D0C99]/50 hover:bg-[#3D0C99]/10 hover:border-[#00ADE0]/50 hover:text-[#3D0C99]",
   danger:
-    "bg-gradient-to-r from-red-600 to-pink-600 text-white border-transparent",
+    "bg-gradient-to-r from-[#3D0C99] to-[#00ADE0] text-white border-transparent",
   secondary:
-    "bg-white/[0.08] text-white border-white/10 hover:bg-white/[0.12] hover:border-violet-500/40",
+    "bg-white/[0.08] text-white border-white/10 hover:bg-white/[0.12] hover:border-[#00ADE0]/40",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -56,8 +59,11 @@ export default function Button({
   className = "",
   disabled = false,
   fullWidth = false,
+  href,
+  target,
+  rel,
 }: ButtonProps) {
-  const btnRef = useRef<HTMLButtonElement>(null);
+  const btnRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
 
   const handleMouseEnter = () => {
     if (disabled) return;
@@ -97,9 +103,43 @@ export default function Button({
     });
   };
 
+  const sharedClasses = [
+    "inline-flex items-center justify-center font-semibold rounded-sm ",
+    "transition-colors duration-200 cursor-pointer select-none",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00ADE0]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
+    variantStyles[variant],
+    sizeStyles[size],
+    fullWidth ? "w-full" : "",
+    disabled ? "opacity-50 cursor-not-allowed" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  if (href) {
+    return (
+      <a
+        ref={btnRef as Ref<HTMLAnchorElement>}
+        href={href}
+        target={target}
+        rel={rel}
+        onClick={onClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        className={sharedClasses}
+      >
+        {Icon && iconPosition === "left" && <Icon className={iconSizes[size]} />}
+        {children}
+        {Icon && iconPosition === "right" && <Icon className={iconSizes[size]} />}
+      </a>
+    );
+  }
+
   return (
     <button
-      ref={btnRef}
+      ref={btnRef as Ref<HTMLButtonElement>}
       type={type}
       onClick={onClick}
       disabled={disabled}
@@ -107,18 +147,7 @@ export default function Button({
       onMouseLeave={handleMouseLeave}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
-      className={[
-        "inline-flex items-center justify-center font-semibold rounded-sm",
-        "transition-colors duration-200 cursor-pointer select-none",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
-        variantStyles[variant],
-        sizeStyles[size],
-        fullWidth ? "w-full" : "",
-        disabled ? "opacity-50 cursor-not-allowed" : "",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={sharedClasses}
     >
       {Icon && iconPosition === "left" && <Icon className={iconSizes[size]} />}
       {children}

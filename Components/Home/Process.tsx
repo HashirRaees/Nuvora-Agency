@@ -4,11 +4,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  RiSearchEyeLine,
-  RiPencilRulerLine,
-  RiCodeSSlashLine,
-  RiRocketLine,
-} from "react-icons/ri";
+  FaMagnifyingGlass,
+ FaPalette,
+  FaLaptopCode,
+  FaRocket,
+} from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,37 +17,37 @@ const steps = [
     num: "01",
     title: "Discovery",
     desc: "We deep-dive into your business goals, audience, and competitors to craft the perfect strategy.",
-    icon: RiSearchEyeLine,
-    color: "text-violet-400",
-    bg: "from-violet-600/20 to-violet-900/10",
-    border: "border-violet-500/20",
+    icon: FaMagnifyingGlass,
+    color: "text-[#3D0C99]",
+    bg: "from-[#3D0C99]/20 to-[#00ADE0]/10",
+    border: "border-[#3D0C99]/20",
   },
   {
     num: "02",
     title: "Design",
     desc: "Creating modern, on-brand UI/UX that converts visitors into customers.",
-    icon: RiPencilRulerLine,
-    color: "text-cyan-400",
-    bg: "from-cyan-600/20 to-cyan-900/10",
-    border: "border-cyan-500/20",
+    icon: FaPalette,
+    color: "text-[#00ADE0]",
+    bg: "from-[#00ADE0]/20 to-[#3D0C99]/10",
+    border: "border-[#00ADE0]/20",
   },
   {
     num: "03",
     title: "Development",
     desc: "Building optimized, performant websites with clean, maintainable code.",
-    icon: RiCodeSSlashLine,
-    color: "text-pink-400",
-    bg: "from-pink-600/20 to-pink-900/10",
-    border: "border-pink-500/20",
+    icon: FaLaptopCode,
+    color: "text-[#3D0C99]",
+    bg: "from-[#3D0C99]/20 to-[#00ADE0]/10",
+    border: "border-[#3D0C99]/20",
   },
   {
     num: "04",
     title: "Launch",
     desc: "Thorough testing, deployment, and post-launch support to ensure everything runs perfectly.",
-    icon: RiRocketLine,
-    color: "text-amber-400",
-    bg: "from-amber-600/20 to-amber-900/10",
-    border: "border-amber-500/20",
+    icon: FaRocket,
+    color: "text-[#00ADE0]",
+    bg: "from-[#00ADE0]/20 to-[#3D0C99]/10",
+    border: "border-[#00ADE0]/20",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function Process() {
           <div className="hidden lg:block absolute top-12 left-0 right-0 px-20">
             <div
               ref={lineRef}
-              className="h-px bg-linear-to-r from-violet-600/60 via-cyan-500/60 to-amber-500/40"
+              className="h-px bg-linear-to-r from-[#3D0C99]/60 via-[#00ADE0]/60 to-[#3D0C99]/40"
             />
           </div>
 

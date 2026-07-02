@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Card from "@/Components/ui/Card";
 import Button from "@/Components/ui/Button";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { RiExternalLinkLine } from "react-icons/ri";
+import { FaArrowUpRightFromSquare, FaArrowRight } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,8 +18,8 @@ const projects = [
     category: "restaurant",
     live: "https://la-cucina-restaurant.vercel.app/",
     image: "la cucina.png",
-    accent: "text-orange-400",
-    tag: "bg-orange-500/15 text-orange-300 border-orange-500/20",
+    accent: "text-[#00ADE0]",
+    tag: "bg-[#00ADE0]/15 text-[#00ADE0] border-[#00ADE0]/30",
   },
   {
     id: 2,
@@ -26,10 +27,9 @@ const projects = [
     desc: "Service booking and lead-gen with trust signals & CTAs.",
     category: "local",
     live: "https://aqua-fix-plumbing.vercel.app/",
-    // gradient: "from-blue-600/40 via-blue-700/20 to-indigo-900/30",
     image: "aqua-fix.png",
-    accent: "text-blue-400",
-    tag: "bg-blue-500/15 text-blue-300 border-blue-500/20",
+    accent: "text-[#3D0C99]",
+    tag: "bg-[#3D0C99]/15 text-[#3D0C99] border-[#3D0C99]/30",
   },
   {
     id: 3,
@@ -37,11 +37,9 @@ const projects = [
     desc: "Responsive site for a local gym showcasing trainer bios and membership plans",
     category: "local",
     live: "https://iron-forge-gym-mu.vercel.app/",
-    // gradient: "from-pink-600/40 via-rose-600/20 to-red-900/30",
     image: "iron forge.png",
-    accent: "text-[#E63946]",
-    tag: "bg-[#E6394630] text-[#E63946] border-[#E63946]",
-
+    accent: "text-[#00ADE0]",
+    tag: "bg-[#00ADE0]/15 text-[#00ADE0] border-[#00ADE0]/30",
   },
   {
     id: 4,
@@ -49,10 +47,9 @@ const projects = [
     desc: "Property listings, search filters and agent contact system.",
     category: "real-estate",
     live: "https://havenly-estates.vercel.app/",
-    // gradient: "from-emerald-600/40 via-green-700/20 to-teal-900/30",
     image: "havenly.png",
-    accent: "text-[#c9a96a]",
-    tag: "bg-[#c9a96a30] text-[#c9a96a] border-[#c9a96a]",
+    accent: "text-[#3D0C99]",
+    tag: "bg-[#3D0C99]/15 text-[#3D0C99] border-[#3D0C99]/30",
   },
   {
     id: 5,
@@ -60,10 +57,10 @@ const projects = [
     desc: "Conversion-focused landing page with stunning visuals.",
     category: "local",
     live: "https://wanderlux-travel-ten.vercel.app/",
-    gradient: "from-cyan-600/40 via-teal-600/20 to-emerald-900/30",
+    gradient: "from-[#3D0C99]/60 via-[#00ADE0]/40 to-[#3D0C99]/20",
     image: "wanderlux.png",
-    accent: "text-[#0F241F]",
-    tag: "bg-[#0F241F30] text-green-500 border-[#0F241F]",
+    accent: "text-[#00ADE0]",
+    tag: "bg-[#00ADE0]/15 text-[#00ADE0] border-[#00ADE0]/30",
   },
   {
     id: 6,
@@ -71,22 +68,11 @@ const projects = [
     desc: "A full fledged construction webiste for residential & commercial projects.",
     category: "local",
     live: "https://build-core-constructions-nu.vercel.app/",
-    gradient: "from-cyan-600/40 via-teal-600/20 to-emerald-900/30",
+    gradient: "from-[#00ADE0]/50 via-[#3D0C99]/35 to-[#00ADE0]/20",
     image: "buildcore.png",
-    accent: "text-[#FF6A00]",
-    tag: "bg-[#FF6A0030] text-[#FF6A00] border-[#FF6A00]",
+    accent: "text-[#3D0C99]",
+    tag: "bg-[#3D0C99]/15 text-[#3D0C99] border-[#3D0C99]/30",
   },
-  // {
-  //   id: 6,
-  //   title: "SaaS Dashboard",
-  //   desc: "Admin & analytics dashboards with real-time data visualization.",
-  //   category: "saas",
-  //   live: "https://example.com/saas-dashboard",
-  //   gradient: "from-violet-600/40 via-purple-700/20 to-indigo-900/30",
-  //   image: "saas.svg",
-  //   accent: "text-violet-400",
-  //   tag: "bg-violet-500/15 text-violet-300 border-violet-500/20",
-  // },
 ];
 
 const categories = ["all", "restaurant", "local", "real-estate"];
@@ -97,14 +83,21 @@ const catLabels: Record<string, string> = {
   "real-estate": "Real Estate",
 };
 
-export default function FeaturedProjects() {
+interface FeaturedProjectsProps {
+  isHomepage?: boolean;
+}
+
+export default function FeaturedProjects({ isHomepage = false }: FeaturedProjectsProps) {
   const [filter, setFilter] = useState<string>("all");
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const filtered =
-    filter === "all" ? projects : projects.filter((p) => p.category === filter);
+  const displayedProjects = isHomepage
+    ? projects.slice(0, 3)
+    : filter === "all"
+    ? projects
+    : projects.filter((p) => p.category === filter);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -123,7 +116,7 @@ export default function FeaturedProjects() {
     return () => ctx.revert();
   }, []);
 
-  // Animate cards when filter changes
+  // Animate cards when filter or display list changes
   useEffect(() => {
     if (!gridRef.current) return;
     gsap.fromTo(
@@ -138,7 +131,7 @@ export default function FeaturedProjects() {
         ease: "power2.out",
       }
     );
-  }, [filter]);
+  }, [filter, isHomepage]);
 
   return (
     <section id="portfolio" ref={sectionRef} className="py-12 md:py-24 bg-[#010205] relative overflow-hidden">
@@ -154,28 +147,30 @@ export default function FeaturedProjects() {
             </h2>
           </div>
 
-          {/* Filter tabs */}
-          <div className="flex justify-center flex-wrap gap-2">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setFilter(c)}
-                className={[
-                  "px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 cursor-pointer",
-                  filter === c
-                    ? "bg-violet-600 border-violet-500 text-white shadow-lg shadow-violet-900/30"
-                    : "bg-white/4 border-white/8 text-white/55 hover:text-white hover:bg-white/8",
-                ].join(" ")}
-              >
-                {catLabels[c]}
-              </button>
-            ))}
-          </div>
+          {/* Filter tabs — Only shown if not on homepage */}
+          {!isHomepage && (
+            <div className="flex justify-center flex-wrap gap-2">
+              {categories.map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setFilter(c)}
+                  className={[
+                    "px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 cursor-pointer",
+                    filter === c
+                      ? "bg-[#3D0C99] border-[#00ADE0] text-white shadow-lg shadow-[#3D0C99]/30"
+                      : "bg-white/4 border-white/8 text-white/55 hover:text-white hover:bg-white/8",
+                  ].join(" ")}
+                >
+                  {catLabels[c]}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Grid */}
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((p) => (
+          {displayedProjects.map((p) => (
             <Card key={p.id} glow hover className="overflow-hidden p-0!">
               {/* Image preview with dynamic color overlay */}
               <div className="h-44 relative">
@@ -184,7 +179,7 @@ export default function FeaturedProjects() {
                   alt={p.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient} mix-blend-overlay`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${p.gradient || 'from-[#3D0C99]/60 via-[#00ADE0]/40 to-[#3D0C99]/20'} mix-blend-overlay`} />
                 {/* Grid lines */}
                 <div className="absolute inset-0 grid-bg opacity-30" />
                 {/* content slot (if needed) */}
@@ -207,7 +202,7 @@ export default function FeaturedProjects() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    icon={RiExternalLinkLine}
+                    icon={FaArrowUpRightFromSquare}
                     iconPosition="right"
                     onClick={() => {
                       if (p.live) window.open(p.live, "_blank");
@@ -220,6 +215,22 @@ export default function FeaturedProjects() {
             </Card>
           ))}
         </div>
+
+        {/* View All Button for Homepage */}
+        {isHomepage && (
+          <div className="mt-12 flex justify-center">
+            <Link href="/portfolio" className="no-underline">
+              <Button
+                variant="outline"
+                size="lg"
+                icon={FaArrowRight}
+                iconPosition="right"
+              >
+                View All Projects
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

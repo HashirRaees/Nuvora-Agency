@@ -48,11 +48,11 @@
    ============================================= */
 :root {
   /* Brand colors */
-  --brand-violet: #7c3aed;
-  --brand-violet-light: #a78bfa;
-  --brand-cyan: #06b6d4;
-  --brand-cyan-light: #67e8f9;
-  --brand-pink: #ec4899;
+  --brand-violet: #3D0C99;
+  --brand-violet-light: #5b22d7;
+  --brand-cyan: #00ADE0;
+  --brand-cyan-light: #3fd6f5;
+  --brand-pink: #00ADE0;
 
   /* Backgrounds */
   --bg-base: #010205;
@@ -143,7 +143,7 @@
 
   /* Text selection */
   ::selection {
-    background: rgba(124, 58, 237, 0.35);
+    background: rgba(61, 12, 153, 0.35);
     color: white;
   }
 }
@@ -332,7 +332,7 @@
    CURVED LOOP MARQUEE
    ============================================= */
 .curved-loop-jacket {
-  padding-top: 20px;
+  padding-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;

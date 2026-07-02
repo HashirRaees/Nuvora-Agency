@@ -4,14 +4,15 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/Components/ui/Button";
-import { RiArrowRightLine, RiTeamLine, RiAwardLine, RiGlobalLine } from "react-icons/ri";
+import Link from "next/link";
+import { FaArrowRight, FaUsers, FaTrophy, FaGlobe } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { icon: RiTeamLine, num: "50+", label: "Projects Delivered", color: "text-violet-400" },
-  { icon: RiAwardLine, num: "98%", label: "Client Satisfaction", color: "text-cyan-400" },
-  { icon: RiGlobalLine, num: "3+", label: "Years Experience", color: "text-pink-400" },
+  { icon: FaUsers, num: "50+", label: "Projects Delivered", color: "text-[#3D0C99]" },
+  { icon: FaTrophy, num: "98%", label: "Client Satisfaction", color: "text-[#00ADE0]" },
+  { icon: FaGlobe, num: "3+", label: "Years Experience", color: "text-[#3D0C99]" },
 ];
 
 export default function About() {
@@ -65,11 +66,6 @@ export default function About() {
     return () => ctx.revert();
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="about" ref={sectionRef} className="py-12 md:py-24 bg-[#010205] relative overflow-hidden">
       <div className="orb orb-violet absolute left-0 top-1/2 -translate-y-1/2 w-80 h-80 opacity-20 pointer-events-none" />
@@ -87,7 +83,7 @@ export default function About() {
               <div className="relative z-10 space-y-4">
                 {/* Mock profile */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 rounded-md bg-linear-to-br from-violet-600 to-cyan-500 flex items-center justify-center text-2xl font-black text-white" style={{ fontFamily: "var(--font-outfit)" }}>
+                  <div className="w-16 h-16 rounded-md bg-linear-to-br from-[#3D0C99] to-[#00ADE0] flex items-center justify-center text-2xl font-black text-white" style={{ fontFamily: "var(--font-outfit)" }}>
                     N.
                   </div>
                   <div>
@@ -109,7 +105,7 @@ export default function About() {
                     </div>
                     <div className="h-1.5 rounded-full bg-white/6">
                       <div
-                        className="h-full rounded-full bg-linear-to-r from-violet-500 to-cyan-400"
+                        className="h-full rounded-full bg-linear-to-r from-[#3D0C99] to-[#00ADE0]"
                         style={{ width: `${b.pct}%` }}
                       />
                     </div>
@@ -118,7 +114,7 @@ export default function About() {
               </div>
 
               {/* Bottom glow */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-24 bg-violet-600/30 blur-2xl rounded-full pointer-events-none" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-24 bg-[#3D0C99]/30 blur-2xl rounded-full pointer-events-none" />
             </div>
           </div>
 
@@ -138,11 +134,11 @@ export default function About() {
             </p>
 
             {/* Stats row */}
-                <div ref={statsRef} className="flex flex-wrap justify-center gap-6 mb-10">
+            <div ref={statsRef} className="flex flex-wrap justify-center gap-6 mb-10">
               {stats.map((s) => (
                 <div
                   key={s.label}
-                      className="flex items-center gap-3 bg-white/4 border border-white/7 rounded-md px-4 py-5"
+                  className="flex items-center gap-3 bg-white/4 border border-white/7 rounded-md px-4 py-5"
                 >
                   <s.icon className={`text-2xl ${s.color}`} />
                   <div>
@@ -154,16 +150,17 @@ export default function About() {
                 </div>
               ))}
             </div>
-              <div className="flex md:justify-start justify-center">
-            <Button
-              variant="primary"
-              size="lg"
-              icon={RiArrowRightLine}
-              iconPosition="right"
-              onClick={() => scrollToSection("contact")}
-            >
-              Work With Us
-            </Button>
+            <div className="flex md:justify-start justify-center">
+              <Link href="/contact" className="no-underline">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  icon={FaArrowRight}
+                  iconPosition="right"
+                >
+                  Work With Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
