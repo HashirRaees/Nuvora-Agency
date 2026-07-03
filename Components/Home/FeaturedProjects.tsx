@@ -179,7 +179,7 @@ export default function FeaturedProjects({ isHomepage = false }: FeaturedProject
                   alt={p.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className={`absolute inset-0 bg-linear-to-br ${p.gradient || 'from-[#3D0C99]/60 via-[#00ADE0]/40 to-[#3D0C99]/20'} mix-blend-overlay`} />
+                {/* <div className={`absolute inset-0 bg-linear-to-br ${p.gradient || 'from-[#3D0C99]/60 via-[#00ADE0]/40 to-[#3D0C99]/20'} mix-blend-overlay`} /> */}
                 {/* Grid lines */}
                 <div className="absolute inset-0 grid-bg opacity-30" />
                 {/* content slot (if needed) */}
