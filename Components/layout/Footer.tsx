@@ -1,7 +1,14 @@
 import Link from "next/link";
-import { FaFacebookF, FaInstagram } from "react-icons/fa6";
+import type { IconType } from "react-icons";
+import { FaEnvelope, FaFacebookF, FaInstagram, FaLocationDot, FaWhatsapp } from "react-icons/fa6";
 
-const footerLinks = [
+type FooterLink = {
+  label: string;
+  href: string;
+  icon?: IconType;
+};
+
+const footerLinks: Array<{ label: string; links: FooterLink[] }> = [
   {
     label: "Services",
     links: [
@@ -16,15 +23,16 @@ const footerLinks = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Portfolio", href: "/portfolio" },
-      { label: "Process", href: "/" },
-      { label: "FAQ", href: "/contact" },
+      { label: "Services", href: "/services" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
     label: "Contact",
     links: [
-      { label: "Get In Touch", href: "/contact" },
-      { label: "nvoraagency@gmail.com", href: "mailto:nvoraagency@gmail.com" },
+      { label: "nvoraagency@gmail.com", href: "mailto:nvoraagency@gmail.com", icon: FaEnvelope },
+      { label: "+92 314-7125890", href: "https://wa.me/923147125890", icon: FaWhatsapp },
+      { label: "Karachi, Pakistan", href: "#", icon: FaLocationDot },
     ],
   },
 ];
@@ -77,7 +85,7 @@ export default function Footer() {
           {footerLinks.map((group) => (
             <div key={group.label}>
               <h4
-                className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4"
+                className="text-sm font-semibold uppercase tracking-widest mb-4"
                 style={{ fontFamily: "var(--font-outfit)" }}
               >
                 {group.label}
@@ -87,9 +95,10 @@ export default function Footer() {
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm text-white/55 hover:text-white transition-colors duration-200"
+                      className="inline-flex items-center gap-2 text-sm text-white/55 hover:text-white transition-colors duration-200"
                     >
-                      {l.label}
+                      {l.icon ? <l.icon size={14} /> : null}
+                      <span>{l.label}</span>
                     </Link>
                   </li>
                 ))}
@@ -105,7 +114,7 @@ export default function Footer() {
           </p>
           <p className="text-xs text-white/25">
             Designed & Developed By{" "}
-            <span className="gradient-text font-medium">Hashir Raees.</span>
+           <Link href="https://hashir-raees-porfolio.vercel.app/" target="_blank"><span className="gradient-text font-medium">Hashir Raees.</span></Link>
           </p>
         </div>
       </div>
