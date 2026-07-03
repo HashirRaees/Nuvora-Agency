@@ -36,7 +36,6 @@ export default function Card({
   const handleMouseEnter = () => {
     if (!hover) return;
     gsap.to(cardRef.current, {
-      y: -6,
       borderColor: glow ? "rgba(61, 12, 153, 0.4)" : "rgba(255,255,255,0.14)",
       boxShadow: glow
         ? "0 16px 48px rgba(0, 173, 224, 0.16), 0 0 0 1px rgba(61, 12, 153, 0.12)"
@@ -49,7 +48,6 @@ export default function Card({
   const handleMouseLeave = () => {
     if (!hover) return;
     gsap.to(cardRef.current, {
-      y: 0,
       borderColor: "rgba(255,255,255,0.07)",
       boxShadow: "none",
       duration: 0.3,

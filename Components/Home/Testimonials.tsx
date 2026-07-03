@@ -82,33 +82,33 @@ export default function Testimonials() {
     <section id="testimonials" ref={sectionRef} className="py-12 md:py-24 bg-[#010205] relative overflow-hidden">
       <div className="orb orb-violet absolute left-1/4 top-0 w-96 h-96 opacity-15 pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-6">
-        <div ref={headingRef} className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div ref={headingRef} className="text-center mb-8 md:mb-16">
           <p className="section-label mb-3 text-xs">What Clients Say</p>
           <h2 className="section-heading text-2xl md:text-5xl">
             Real Stories, <span className="gradient-text">Real Results</span>
           </h2>
         </div>
 
-        <div ref={carouselRef} className="w-full max-w-4xl mx-auto px-4 md:px-12 relative">
-          <Carousel opts={{ loop: true }} className="w-full">
-            <CarouselContent>
+        <div ref={carouselRef} className="w-full mx-auto px-0 md:px-2 relative">
+          <Carousel opts={{ loop: true, align: "start" }} className="w-full">
+            <CarouselContent className="-ml-2 md:-ml-4">
               {data.map((t) => (
-                <CarouselItem key={t.id}>
-                  <div className="p-2">
-                    <Card className="flex flex-col items-center text-center p-8 md:p-12 relative overflow-hidden" hover glow>
+                <CarouselItem key={t.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 xl:basis-1/3">
+                  <div className="h-full p-1">
+                    <Card className="flex flex-col items-start text-left p-8 md:p-12 relative overflow-hidden" hover glow>
                       {/* Quote Icon */}
-                      <FaQuoteLeft className="text-4xl text-[#00ADE0]/25 mb-6" />
+                      <FaQuoteLeft className="text-4xl md:text-6xl text-[#00ADE0]/25 mb-6" />
 
                       {/* Stars */}
-                      <div className="flex justify-center gap-1 mb-6">
+                      <div className="flex gap-1 mb-6">
                         {Array.from({ length: t.stars }).map((_, i) => (
                           <FaStar key={i} className="text-[#00ADE0] text-lg" />
                         ))}
                       </div>
 
                       {/* Quote */}
-                      <blockquote className="text-lg md:text-xl text-white/80 leading-relaxed font-light mb-8 max-w-2xl mx-auto">
+                      <blockquote className="text-sm md:text-lg text-white/80 leading-relaxed font-light mb-8 max-w-2xl mx-auto">
                         "{t.text}"
                       </blockquote>
 
@@ -132,8 +132,8 @@ export default function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:inline-flex -left-6 bg-white/5 border border-white/10 hover:bg-white/10 text-white" />
-            <CarouselNext className="hidden md:inline-flex -right-6 bg-white/5 border border-white/10 hover:bg-white/10 text-white" />
+            <CarouselPrevious className="hidden md:inline-flex bg-white/5 border border-white/10 hover:bg-white/10 text-white" />
+            <CarouselNext className="hidden md:inline-flex bg-white/5 border border-white/10 hover:bg-white/10 text-white" />
           </Carousel>
         </div>
       </div>
