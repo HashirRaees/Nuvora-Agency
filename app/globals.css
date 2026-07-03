@@ -321,10 +321,11 @@
       font-size: 11px;
     }
     .curved-loop-jacket{
-      padding-top: 10px !important; 
+      padding-top: 20px !important; 
     }
     .curved-loop-svg{
-      font-size: 6rem !important;
+      font-size: 8rem !important;
+      stroke-width: 3px !important;
     }
 }
 
@@ -348,7 +349,9 @@
   display: block;
   font-size: 4rem;
   font-family: var(--font-outfit), sans-serif;
-  fill: rgba(100, 100, 100, 0.507);
+  fill: none;
+  stroke-width: 1px;
+  stroke:rgba(134, 134, 134, 0.507);
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;

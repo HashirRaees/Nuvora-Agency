@@ -157,7 +157,7 @@ export default function Contact() {
                   className="flex items-center gap-4 p-4 rounded-md bg-white/3 border border-white/7 hover:border-[#3D0C99]/30 hover:bg-[#3D0C99]/4 transition-all duration-200 group"
                 >
                   <div className="w-10 h-10 rounded-sm bg-[#3D0C99]/15 border border-[#3D0C99]/20 flex items-center justify-center">
-                    <c.icon className="text-lg text-[#00ADE0]" />
+                    <c.icon className="text-lg text-white" />
                   </div>
                   <div>
                     <div className="text-xs text-white/35 mb-0.5">{c.label}</div>
@@ -188,8 +188,8 @@ export default function Contact() {
             {/* Response time */}
             <div className="rounded-md bg-gradient-to-br from-[#3D0C99]/15 to-[#00ADE0]/10 border border-[#3D0C99]/20 p-5">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-[#00ADE0] animate-pulse" />
-                <span className="text-xs font-semibold text-[#00ADE0] uppercase tracking-wider">Available Now</span>
+                <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
+                <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Available</span>
               </div>
               <p className="text-sm text-white/60 leading-relaxed">
                 We typically respond within a few hours during business days.

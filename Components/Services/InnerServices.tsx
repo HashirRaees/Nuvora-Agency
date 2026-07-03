@@ -60,7 +60,7 @@ export default function InnerServices() {
       <div className="orb orb-violet absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 opacity-25 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
-        <div ref={headingRef} className="max-w-2xl mb-8 md:mb-16">
+        <div ref={headingRef} className="max-w-2xl md:text-left text-center mb-8 md:mb-16">
           <p className="section-label mb-3 text-xs">What We Offer</p>
           <h2 className="section-heading text-2xl md:text-5xl">
             Services Built for <span className="gradient-text">Real Results</span>

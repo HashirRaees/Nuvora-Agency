@@ -119,7 +119,7 @@ export default function FAQ() {
           <h2 className="section-heading text-2xl md:text-5xl">
             Common <span className="gradient-text">Questions</span>
           </h2>
-          <p className="mt-4 text-white/55 text-lg">
+          <p className="mt-4 text-white/55 text-sm md:text-lg">
             Everything you need to know before we start working together.
           </p>
         </div>

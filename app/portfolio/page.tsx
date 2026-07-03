@@ -1,19 +1,14 @@
-import Navbar from "@/Components/layout/Navbar";
-import Footer from "@/Components/layout/Footer";
 import FeaturedProjects from "@/Components/Home/FeaturedProjects";
 import CTA from "@/Components/Home/CTA";
-import CustomCursor from "@/Components/ui/CustomCursor";
 
 export default function PortfolioPage() {
   return (
     <div
-      className="min-h-screen text-white pt-24"
+      className="min-h-screen text-white pt-20"
       style={{
         background: "linear-gradient(to bottom, #04070f 0%, #060b18 40%, #04070f 100%)",
       }}
     >
-      <CustomCursor />
-      <Navbar />
       <main>
         <section className="relative py-12 md:py-20 text-center overflow-hidden">
           <div className="absolute inset-0 bg-linear-to-br from-[#00ADE0]/25 via-[#060b18]/80 to-[#3D0C99]/20" />
@@ -43,7 +38,6 @@ export default function PortfolioPage() {
 
         <CTA />
       </main>
-      <Footer />
     </div>
   );
 }

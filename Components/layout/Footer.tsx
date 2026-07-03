@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div
-              className="text-xl md:text-2xl font-semibold text-white mb-3"
+              className="text-2xl md:text-3xl font-semibold text-white mb-3"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
               Nuvora<span className="gradient-text">.</span>

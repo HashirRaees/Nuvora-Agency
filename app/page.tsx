@@ -1,5 +1,3 @@
-import Navbar from "@/Components/layout/Navbar";
-import Footer from "@/Components/layout/Footer";
 import Hero from "@/Components/Home/Hero";
 import Stats from "@/Components/Home/Stats";
 import HomeServices from "@/Components/Services/HomeServices";
@@ -8,7 +6,6 @@ import Process from "@/Components/Home/Process";
 import WhyChooseUs from "@/Components/Home/WhyChooseUs";
 import Testimonials from "@/Components/Home/Testimonials";
 import CTA from "@/Components/Home/CTA";
-import CustomCursor from "@/Components/ui/CustomCursor";
 import CurvedLoop from "@/Components/ui/CurvedLoop";
 import FAQ from "@/Components/Home/Faq";
 
@@ -20,8 +17,6 @@ export default function Home() {
         background: "linear-gradient(to bottom, #04070f 0%, #060b18 40%, #04070f 100%)",
       }}
     >
-      <CustomCursor />
-      <Navbar />
       <main>
         {/* Hero Section */}
         <Hero />
@@ -29,7 +24,7 @@ export default function Home() {
         {/* Curved marquee */}
         <div className="bg-[#010205]">
           <CurvedLoop
-            marqueeText="Helping Businesses Grow Online ● Modern Websites That Convert ● Pixel-Perfect Design ● Fast & Responsive Experiences ● Custom Solutions for Brands ● SEO-Optimized Websites ● Seamless User Experiences"
+            marqueeText="Helping Businesses Grow Online ● Modern Websites ● Pixel-Perfect Design ● Fast & Responsive Experiences ● Custom Solutions for Brands ● SEO-Optimized Websites ● Seamless User Experiences ●"
             speed={1}
             curveAmount={0}
             direction="left"
@@ -66,7 +61,6 @@ export default function Home() {
         {/* Call To Action (CTA) Section */}
         <CTA />
       </main>
-      <Footer />
     </div>
   );
 }

@@ -32,7 +32,7 @@ export default function Packages() {
     return (
         <div className="pb-12 md:pb-24 bg-[#010205] relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="max-w-2xl mb-10">
+                <div className="max-w-2xl md:text-left text-center mb-10">
                     <p className="section-label mb-3 text-xs">Flexible Packages</p>
                     <h3 className="section-heading text-2xl md:text-4xl">
                         Choose a package for your <span className="gradient-text">next launch</span>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Navbar from "@/Components/layout/Navbar";
+import Footer from "@/Components/layout/Footer";
+import CustomCursor from "@/Components/ui/CustomCursor";
 import Chatbot from "../Components/ui/ChatBot";
 
 const inter = Inter({
@@ -43,8 +46,12 @@ export default function RootLayout({
         outfit.variable,
       )}
     >
-      <body className="min-h-full flex flex-col bg-[#04070f]">{children}
-        <Chatbot/>
+      <body className="min-h-full flex flex-col bg-[#04070f]">
+        <CustomCursor />
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
+        <Chatbot />
       </body>
     </html>
   );

@@ -1,18 +1,13 @@
-import Navbar from "@/Components/layout/Navbar";
-import Footer from "@/Components/layout/Footer";
 import Contact from "@/Components/Contact/Contact";
-import CustomCursor from "@/Components/ui/CustomCursor";
 
 export default function ContactPage() {
   return (
     <div
-      className="min-h-screen text-white pt-24"
+      className="min-h-screen text-white pt-20"
       style={{
         background: "linear-gradient(to bottom, #04070f 0%, #060b18 40%, #04070f 100%)",
       }}
     >
-      <CustomCursor />
-      <Navbar />
       <main>
         <section className="relative py-12 md:py-20 text-center overflow-hidden">
           <div className="absolute inset-0 bg-linear-to-br from-[#3D0C99]/30 via-[#060b18]/80 to-[#00ADE0]/20" />
@@ -40,7 +35,6 @@ export default function ContactPage() {
 
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }
