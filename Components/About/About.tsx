@@ -5,21 +5,37 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/Components/ui/Button";
 import Link from "next/link";
-import { FaArrowRight, FaUsers, FaTrophy, FaGlobe } from "react-icons/fa6";
+import { FaArrowRight, FaBullseye, FaLightbulb, FaShieldHalved, FaUsers } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const stats = [
-  { icon: FaUsers, num: "50+", label: "Projects Delivered", color: "text-[#3D0C99]" },
-  { icon: FaTrophy, num: "98%", label: "Client Satisfaction", color: "text-[#00ADE0]" },
-  { icon: FaGlobe, num: "3+", label: "Years Experience", color: "text-[#3D0C99]" },
+const coreValues = [
+  {
+    title: "Purpose-Driven",
+    description: "Every website we create is shaped around your goals, audience, and story.",
+    icon: FaBullseye,
+  },
+  {
+    title: "Creative Thinking",
+    description: "We turn ideas into experiences that feel distinctive, memorable, and refined.",
+    icon: FaLightbulb,
+  },
+  {
+    title: "Trusted Quality",
+    description: "We build with care, attention to detail, and a commitment to lasting impact.",
+    icon: FaShieldHalved,
+  },
+  {
+    title: "People First",
+    description: "Communication, collaboration, and clarity guide everything we deliver.",
+    icon: FaUsers,
+  },
 ];
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -46,21 +62,6 @@ export default function About() {
           scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
         }
       );
-
-      if (statsRef.current) {
-        gsap.fromTo(
-          statsRef.current.children,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            stagger: 0.12,
-            ease: "power2.out",
-            scrollTrigger: { trigger: statsRef.current, start: "top 85%" },
-          }
-        );
-      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -74,82 +75,28 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left — visual */}
-          <div ref={leftRef} className="relative">
-            <div className="relative rounded-md overflow-hidden bg-linear-to-br from-[#12103a] to-[#0a1828] border border-white/7 p-8 shadow-2xl shadow-black/40">
-              {/* Grid bg */}
-              <div className="absolute inset-0 grid-bg opacity-40" />
-
-              {/* Floating stat cards */}
-              <div className="relative z-10 space-y-4">
-                {/* Mock profile */}
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-16 h-16 rounded-md bg-linear-to-br from-[#3D0C99] to-[#00ADE0] flex items-center justify-center text-2xl font-black text-white" style={{ fontFamily: "var(--font-outfit)" }}>
-                    N.
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-outfit)" }}>Nuvora</div>
-                    <div className="text-white/40 text-sm">Web Design & Development</div>
-                  </div>
-                </div>
-
-                {/* Stat bars */}
-                {[
-                  { label: "Design Quality", pct: 98 },
-                  { label: "Client Communication", pct: 100 },
-                  { label: "On-Time Delivery", pct: 95 },
-                ].map((b) => (
-                  <div key={b.label}>
-                    <div className="flex justify-between text-xs text-white/50 mb-1.5">
-                      <span>{b.label}</span>
-                      <span>{b.pct}%</span>
-                    </div>
-                    <div className="h-1.5 rounded-full bg-white/6">
-                      <div
-                        className="h-full rounded-full bg-linear-to-r from-[#3D0C99] to-[#00ADE0]"
-                        style={{ width: `${b.pct}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Bottom glow */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-24 bg-[#3D0C99]/30 blur-2xl rounded-full pointer-events-none" />
-            </div>
+          <div ref={leftRef} className="relative h-full">
+            <img
+              src="/assets/about-img.webp"
+              alt="About Nuvora"
+              className="w-full h-full object-cover rounded-md"
+            />
           </div>
 
           {/* Right — text */}
           <div ref={rightRef}>
             <p className="section-label mb-3 md:text-left text-center text-xs">About Us</p>
             <h2 className="section-heading mb-6 text-2xl md:text-left text-center md:text-5xl">
-              We Are a Web Studio
+              Designed With Heart,
               <br />
-              <span className="gradient-text">Obsessed With Quality</span>
+              <span className="gradient-text">Built To Inspire</span>
             </h2>
             <p className="text-white/60 text-sm md:text-lg md:text-left text-center leading-relaxed mb-5">
-              We are a web design and development studio dedicated to creating modern, high-performing websites that help businesses establish a strong online presence.
+              Nuvora is a creative web studio focused on designing and developing websites that are not only visually striking but also thoughtfully built to support your business goals. We combine strategy, storytelling, and clean execution to create experiences that feel modern, trustworthy, and easy to navigate.
             </p>
             <p className="text-white/60 text-sm md:text-lg md:text-left text-center leading-relaxed mb-10">
-              Our focus is on clean design, exceptional performance, and user experience that converts. Every line of code and pixel of design is crafted with purpose.
+              From the first concept to the final launch, we pay close attention to performance, responsiveness, and user experience so your website works beautifully across every device. Whether you need a fresh brand presence, a conversion-focused landing page, or a complete web experience, we build with clarity, purpose, and long-term impact in mind.
             </p>
-
-            {/* Stats row */}
-            <div ref={statsRef} className="flex flex-wrap justify-center gap-6 mb-10">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-3 bg-white/4 border border-white/7 rounded-md px-4 py-5"
-                >
-                  <s.icon className={`text-2xl ${s.color}`} />
-                  <div>
-                    <div className="text-xl font-semibold text-white" style={{ fontFamily: "var(--font-outfit)" }}>
-                      {s.num}
-                    </div>
-                    <div className="text-xs text-white/40">{s.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
             <div className="flex md:justify-start justify-center">
               <Link href="/contact" className="no-underline">
                 <Button
@@ -162,6 +109,36 @@ export default function About() {
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-20">
+          <h2 className="section-heading mb-6 text-2xl text-center md:text-5xl">
+              Our Core
+              <span className="gradient-text"> Values</span>
+            </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {coreValues.map((value) => {
+            const Icon = value.icon;
+            return (
+              <div
+                key={value.title}
+                className="flex items-start gap-4 rounded-xl border border-white/8 bg-white/3 p-5 backdrop-blur-sm"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-[#3D0C99] to-[#00ADE0] text-white">
+                  <Icon className="text-lg" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white" style={{ fontFamily: "var(--font-outfit)" }}>
+                    {value.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-white/60">
+                    {value.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
           </div>
         </div>
       </div>
