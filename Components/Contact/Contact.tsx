@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/Components/ui/Button";
@@ -150,7 +151,7 @@ export default function Contact() {
             {/* Contact details */}
             <div className="space-y-4">
               {contactInfo.map((c) => (
-                <a
+                <Link
                   key={c.label}
                   href={c.href}
                   target="_blank"
@@ -163,7 +164,7 @@ export default function Contact() {
                     <div className="text-xs text-white/35 mb-0.5">{c.label}</div>
                     <div className="text-sm text-white/75 group-hover:text-white transition-colors">{c.value}</div>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -172,7 +173,7 @@ export default function Contact() {
               <p className="text-xs text-white/35 md:text-left text-center uppercase tracking-widest mb-3">Follow Us</p>
               <div className="flex md:justify-start justify-center gap-3">
                 {socials.map(({ icon: Icon, href, label }) => (
-                  <a
+                  <Link
                     key={label}
                     href={href}
                     target="_blank"
@@ -180,13 +181,13 @@ export default function Contact() {
                     className="w-12 h-12 flex items-center justify-center rounded-3xl bg-white/5 border border-white/8 text-white/50 hover:text-white hover:bg-white/10 hover:border-[#3D0C99]/30 transition-all duration-200"
                   >
                     <Icon size={25} />
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
 
             {/* Response time */}
-            <div className="rounded-md bg-gradient-to-br from-[#3D0C99]/15 to-[#00ADE0]/10 border border-[#3D0C99]/20 p-5">
+            <div className="rounded-md bg-linear-to-br from-[#3D0C99]/15 to-[#00ADE0]/10 border border-[#3D0C99]/20 p-5">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 rounded-full bg-green-600 animate-pulse" />
                 <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Available</span>
@@ -202,7 +203,7 @@ export default function Contact() {
             {sent ? (
               <div
                 ref={successRef}
-                className="flex flex-col items-center justify-center text-center py-20 rounded-md bg-white/[0.03] border border-[#00ADE0]/25"
+                className="flex flex-col items-center justify-center text-center py-20 rounded-md bg-white/3 border border-[#00ADE0]/25"
               >
                 <RiCheckboxCircleFill className="text-6xl text-[#00ADE0] mb-4" />
                 <h3
@@ -218,7 +219,7 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.07] rounded-md p-8 space-y-5"
+                className="bg-white/3 backdrop-blur-sm border border-white/[0.07] rounded-md p-8 space-y-5"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, ElementType, ReactNode, MouseEventHandler, Ref } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 
 type ButtonVariant = "primary" | "ghost" | "outline" | "danger" | "secondary";
@@ -118,7 +119,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a
+      <Link
         ref={btnRef as Ref<HTMLAnchorElement>}
         href={href}
         target={target}
@@ -133,7 +134,7 @@ export default function Button({
         {Icon && iconPosition === "left" && <Icon className={iconSizes[size]} />}
         {children}
         {Icon && iconPosition === "right" && <Icon className={iconSizes[size]} />}
-      </a>
+      </Link>
     );
   }
 

@@ -68,7 +68,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2">
               {socials.map(({ icon: Icon, href, label }) => (
-                <a
+                <Link
                   key={label}
                   href={href}
                   target="_blank"
@@ -76,7 +76,7 @@ export default function Footer() {
                   className="w-10 h-10 flex items-center justify-center rounded-3xl bg-white/5 border border-white/7 text-white/50 hover:text-white hover:bg-white/10 hover:border-[#3D0C99]/30 transition-all duration-200"
                 >
                   <Icon size={16} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
