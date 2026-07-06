@@ -65,7 +65,7 @@ export default function HomeServices() {
         <div ref={headingRef} className="max-w-2xl mb-8 md:mb-16">
           <p className="section-label mb-3 text-xs">What We Offer</p>
           <h2 className="section-heading text-2xl md:text-5xl">
-            Services Built for <span className="gradient-text">Real Results</span>
+            Everything Your Website Needs, <span className="gradient-text">From Design to Launch</span>
           </h2>
           <p className="mt-4 text-white/55 text-sm md:text-lg leading-relaxed">
             From first design to launch day — we cover every step of building your online presence.

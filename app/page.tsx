@@ -1,6 +1,6 @@
 import Hero from "@/Components/Home/Hero";
 import Stats from "@/Components/Home/Stats";
-import HomeServices from "@/Components/Services/HomeServices";
+import HomeServices from "@/Components/Home/HomeServices";
 import FeaturedProjects from "@/Components/Home/FeaturedProjects";
 import Process from "@/Components/Home/Process";
 import WhyChooseUs from "@/Components/Home/WhyChooseUs";
@@ -24,7 +24,7 @@ export default function Home() {
         {/* Curved marquee */}
         <div className="bg-[#010205]">
           <CurvedLoop
-            marqueeText="Helping Businesses Grow Online ● Modern Websites ● Pixel-Perfect Design ● Fast & Responsive Experiences ● Custom Solutions for Brands ● SEO-Optimized Websites ● Seamless User Experiences ●"
+            marqueeText="Websites for Restaurants & Cafés ● Local Service Businesses ● Gyms & Fitness Studios ● Startups & Small Brands ● Fast, Mobile-First, SEO-Ready ● Seamless User Experiences ●"
             speed={1}
             curveAmount={0}
             direction="left"

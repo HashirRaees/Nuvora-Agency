@@ -32,6 +32,14 @@ const items = [
     q: "How much does a website cost?",
     a: "Pricing depends on scope and complexity. We offer transparent, project-based quotes with no hidden fees. Reach out for a free consultation and custom quote.",
   },
+  {
+    q: "Do you build websites for restaurants and local businesses?",
+    a: "Yes — we've built booking and menu-focused sites for restaurants, lead-generation sites for local service businesses, and membership sites for gyms. We understand the specific things local businesses need: clear contact info, fast mobile load times, and Google Maps integration.",
+  },
+  {
+    q: "Do you use WordPress or custom code?",
+    a: "Both, depending on your needs. If you want to edit content yourself often, we recommend WordPress with Elementor. If you want maximum speed and a fully custom experience, we build with React and Next.js. We'll recommend the right fit during your discovery call.",
+  },
 ];
 
 export default function FAQ() {

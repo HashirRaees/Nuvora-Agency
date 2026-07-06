@@ -6,24 +6,24 @@ import { FaCheck } from "react-icons/fa6";
 
 const pricingPackages = [
     {
-        name: "Starter",
-        price: "$799",
-        description: "Perfect for a polished launchpad with the essentials to get online quickly.",
-        highlights: ["Landing page or starter website", "Mobile-friendly design", "Basic SEO setup", "One revision round"],
+        name: "Launch",
+        price: "$299",
+        description: "For a single, polished page to get you online fast.",
+        highlights: ["1-page website (landing page or one-pager)", "Mobile-responsive custom design", "Basic on-page SEO setup", "Contact form + WhatsApp/social links", "1 round of revisions", "Delivered in 5–7 days"],
         featured: false,
     },
     {
-        name: "Growth",
-        price: "$1,499",
-        description: "Best for brands that want stronger storytelling, better conversion flow, and more depth.",
-        highlights: ["Multi-section marketing site", "Custom UI enhancements", "Performance tuning", "Content integration support"],
+        name: "Momentum",
+        price: "$699",
+        description: "For businesses that need a full multi-page site with real content and structure.",
+        highlights: ["Up to 5 pages (Home, About, Services, Portfolio/Gallery, Contact)", "Custom design matched to your brand", "On-page SEO across all pages", "Google Maps + business info integration", "Basic performance optimization", "2 rounds of revisions", "Delivered in 2–3 weeks"],
         featured: true,
     },
     {
-        name: "Premium",
-        price: "$2,499+",
-        description: "A full-scale solution for ambitious launches, custom features, and long-term growth.",
-        highlights: ["Fully custom experience", "Advanced functionality", "SEO and analytics setup", "Priority support and updates"],
+        name: "Elevate",
+        price: "$1,499+",
+        description: "For businesses that need custom functionality, not just a brochure site.",
+        highlights: ["Fully custom design and unlimited standard pages", "Custom features (booking systems, filters, calculators, dashboards, etc.)", "Advanced SEO: schema markup, sitemap, Search Console setup", "Performance optimization for Core Web Vitals", "Analytics + conversion tracking setup", "Priority support for 30 days post-launch", "Timeline scoped to project (typically 4–8 weeks)"],
         featured: false,
     },
 ];

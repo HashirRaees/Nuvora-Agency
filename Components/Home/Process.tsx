@@ -16,7 +16,7 @@ const steps = [
   {
     num: "01",
     title: "Discovery",
-    desc: "We deep-dive into your business goals, audience, and competitors to craft the perfect strategy.",
+    desc: "We learn your business, your customers, and your competitors before designing anything.",
     icon: FaMagnifyingGlass,
     color: "text-[#3D0C99]",
     bg: "from-[#3D0C99]/20 to-[#00ADE0]/10",
@@ -25,7 +25,7 @@ const steps = [
   {
     num: "02",
     title: "Design",
-    desc: "Creating modern, on-brand UI/UX that converts visitors into customers.",
+    desc: "Custom layouts built around how your customers actually browse and decide.",
     icon: FaPalette,
     color: "text-[#00ADE0]",
     bg: "from-[#00ADE0]/20 to-[#3D0C99]/10",
@@ -34,7 +34,7 @@ const steps = [
   {
     num: "03",
     title: "Development",
-    desc: "Building optimized, performant websites with clean, maintainable code.",
+    desc: "Clean, fast React/Next.js code — no page-builder bloat.",
     icon: FaLaptopCode,
     color: "text-[#3D0C99]",
     bg: "from-[#3D0C99]/20 to-[#00ADE0]/10",
@@ -43,7 +43,7 @@ const steps = [
   {
     num: "04",
     title: "Launch",
-    desc: "Thorough testing, deployment, and post-launch support to ensure everything runs perfectly.",
+    desc: "Full testing across devices, then a smooth go-live with post-launch support.",
     icon: FaRocket,
     color: "text-[#00ADE0]",
     bg: "from-[#00ADE0]/20 to-[#3D0C99]/10",

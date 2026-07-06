@@ -21,9 +21,9 @@ const outfit = Outfit({
 
 
 export const metadata: Metadata = {
-  title: "Nuvora. — Modern Web Design & Development Agency",
+  title: "Nuvora — Web Design & Development Agency.",
   description:
-    "We design and develop fast, responsive, and conversion-focused websites for businesses, startups, and brands. Get a stunning online presence that drives results.",
+    "Nuvora is a web design agency building fast, SEO-ready websites for restaurants, local businesses, and startups. Get a free quote today.",
   keywords: ["web design", "web development", "Next.js", "React", "portfolio", "agency"],
   openGraph: {
     title: "Nuvora. — Modern Web Design & Development Agency",

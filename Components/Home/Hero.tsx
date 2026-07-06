@@ -64,17 +64,14 @@ export default function Hero() {
               className="text-2xl md:text-7xl font-extrabold text-white leading-tight opacity-0"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
-              We Build Digital Experiences <br />{" "}
-              <span className="gradient-text">That Drive Growth</span>
+              Websites That Turn Visitors <br />{" "}
+              <span className="gradient-text">Into Customers</span>
             </h1>
             <p
               ref={descRef}
               className="mt-6 max-w-3xl mx-auto text-sm md:text-lg text-white/80 text-center opacity-0 leading-relaxed"
             >
-              We transform ambitious ideas into high-performing websites and
-              digital solutions through strategic design, modern development, and
-              innovative technology—helping businesses grow, engage customers,
-              and stand out online.
+             Nuvora is a web design and development studio. We build fast, mobile-first websites on React and Next.js for restaurants, local service businesses, gyms, and startups who need their site to actually bring in bookings and leads — not just look nice.
             </p>
 
             <div
@@ -96,7 +93,7 @@ export default function Hero() {
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Get In Touch
+                Get a Free Quote
               </Button>
             </div>
           </div>

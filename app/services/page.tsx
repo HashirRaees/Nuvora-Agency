@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import InnerServices from "@/Components/Services/InnerServices";
 import Packages from "@/Components/Services/Packages";
 import CTA from "@/Components/Home/CTA";
+
+export const metadata: Metadata = {
+  title: "Nuvora — Web Design & Development Agency in Karachi, Pakistan",
+  description:
+    "Explore Nuvora's web design, front-end development, WordPress, and website redesign services. Transparent pricing packages starting at $799 — built with React & Next.js.",
+  keywords: ["web design", "web development", "Next.js", "React", "portfolio", "agency"],
+};
+
 
 export default function ServicesPage() {
   return (
@@ -22,15 +31,15 @@ export default function ServicesPage() {
             }}
           />
           <div className="orb orb-violet absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-80 h-80 opacity-20 pointer-events-none" />
-          <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <div className="relative z-10 max-w-3xl mx-auto px-6">
             <h1
               className="text-4xl md:text-6xl font-extrabold text-white tracking-tight"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
-              Our <span className="gradient-text">Services</span>
+              Web Design & <span className="gradient-text"> Development Services</span>
             </h1>
             <p className="mt-4 text-white/55 text-sm md:text-lg max-w-xl mx-auto leading-relaxed">
-              We design, build, and optimize digital solutions tailored to help your business succeed online.
+              From a single landing page to a full custom web app — here's exactly what we build, and what's included.
             </p>
           </div>
         </section>
