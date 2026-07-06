@@ -87,9 +87,8 @@ export default function About() {
           <div ref={rightRef}>
             <p className="section-label mb-3 md:text-left text-center text-xs">About Us</p>
             <h2 className="section-heading mb-6 text-2xl md:text-left text-center md:text-5xl">
-              Designed With Heart,
-              <br />
-              <span className="gradient-text">Built To Inspire</span>
+              Why Nuvora
+              <span className="gradient-text"> Exists</span>
             </h2>
             <p className="text-white/60 text-sm md:text-lg md:text-left text-center leading-relaxed mb-5">
               Nuvora is a creative web studio focused on designing and developing websites that are not only visually striking but also thoughtfully built to support your business goals. We combine strategy, storytelling, and clean execution to create experiences that feel modern, trustworthy, and easy to navigate.

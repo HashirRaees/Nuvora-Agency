@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import About from "@/Components/About/About";
+
+export const metadata: Metadata = {
+  title: "About Nuvora — Web Design Studio Based in Karachi, Pakistan",
+  description:
+    "Meet Nuvora, a Karachi-based web design and development studio building fast, custom websites for local businesses and startups. Here's how we work and why.",
+  keywords: ["web design", "web development", "Next.js", "React", "portfolio", "agency"],
+};
 
 export default function AboutPage() {
   return (
