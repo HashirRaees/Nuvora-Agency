@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -6,7 +7,7 @@ import Navbar from "@/Components/layout/Navbar";
 import Footer from "@/Components/layout/Footer";
 import CustomCursor from "@/Components/ui/CustomCursor";
 import Chatbot from "../Components/ui/ChatBot";
-
+import Link from "next/link";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -51,6 +52,21 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
+        <Link
+          href="https://wa.me/923147125890"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact us on WhatsApp"
+          className="fixed bottom-24 right-4 z-60 flex transition hover:scale-105"
+        >
+          <Image
+            src="/assets/whatsapp.svg"
+            alt="WhatsApp"
+            width={60}
+            height={28}
+            priority
+          />
+        </Link>
         <Chatbot />
       </body>
     </html>
