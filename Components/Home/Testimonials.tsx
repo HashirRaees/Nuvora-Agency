@@ -43,6 +43,15 @@ const data = [
     stars: 5,
     color: "from-[#3D0C99] to-[#00ADE0]",
   },
+  {
+    id: 4,
+    name: "Ariana Brooks",
+    role: "Marketing Lead, Northstar Studio",
+    avatar: "AB",
+    text: "The team made the whole process feel effortless. Our new site looks premium, loads quickly, and has already improved our conversion rate.",
+    stars: 5,
+    color: "from-[#00ADE0] to-[#3D0C99]",
+  },
 ];
 
 export default function Testimonials() {
